@@ -1,0 +1,28 @@
+@use "sass:list";
+
+.familysite {
+
+    // 변수 정의
+    $colors : orange, tomato, violet, skyblue, silver;
+
+    display: flex;
+    gap: 2rem;
+    a {
+        font-size: 3.2rem;
+        font-weight: 800;
+    }
+
+    li {
+        transition: 0.3s;
+        // item 이름 color / 변수명 : colors
+        @each $color in $colors {
+            // index 몇번째인지 알아내는 사용
+            $index: list.index($colors, $color);
+            // @debug $index;
+            &:nth-child(#{$index}):hover {
+                color: $color;
+            }
+        }
+    }
+    
+}

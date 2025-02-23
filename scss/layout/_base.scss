@@ -1,0 +1,6 @@
+@use "./ir" as  *;
+
+.ally-hidden {
+    @include ally-hidden;
+}
+
